@@ -1,0 +1,6 @@
+item.ItemAzd.name="ažd 97"
+item.ItemAzdCrossSingle.name="ažd 97 kříž"
+item.ItemAzdCrossMulti.name="ažd 97 kříž 2x"
+
+tile.AzdBlock.name="AZD 97"
+tile.BarrierBlock.name="AZD 97 Bariera"

@@ -1,0 +1,6 @@
+{
+  "pe_ble": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble" ]
+  }
+}
