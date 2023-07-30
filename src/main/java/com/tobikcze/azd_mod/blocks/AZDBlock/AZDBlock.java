@@ -15,6 +15,7 @@ public class AZDBlock extends BlockContainer {
         super(Material.cloth);
         this.setBlockName("AzdBlock");
         this.setCreativeTab(CreativeTabs.tabBlock);
+        this.setBlockTextureName("azd_mod:itemAzd.png");
     }
 
     @Override

@@ -25,7 +25,7 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
 
     public int redstonePower;
     float timeSinceLastTick;
-    float rotation = -90;
+    float rotation = 0;
     int counterin = 0;
 
     @Override
@@ -38,53 +38,11 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
         float scale = te2.scale;
         calcRotation();
 
-        /*
-         * if(firstload < 2){
-         * System.out.println("first load");
-         * firstload++;
-         * String modelname;
-         * switch(rotation2){
-         * case 90:
-         * modelname = "Barrier_1.obj";
-         * break;
-         * case 180:
-         * modelname = "Barrier_2.obj";
-         * break;
-         * case 270:
-         * modelname = "Barrier_3.obj";
-         * break;
-         * default:
-         * modelname = "Barrier_0.obj";
-         * break;
-         * }
-         * System.out.println(modelname);
-         * objModelLocation = new ResourceLocation("azd", "models/" + modelname);
-         * model = AdvancedModelLoader.loadModel(objModelLocation);
-         * }
-         */
-
         bindTexture(texture);
         GL11.glPushMatrix();
         GL11.glTranslated(posX + 0.5 - 0.2, posY + 0.1, posZ + 0.5);
         GL11.glScalef(scale, scale, scale);
-        GL11.glPushMatrix();/*
-                             * //System.out.println(rotation2 % 360);
-                             * switch(rotation2 % 360){
-                             * case 0:
-                             * GL11.glRotatef(rotation2, 0F, 1F, 0F);
-                             * GL11.glRotatef(rotation, 0F, 0F, 1F);
-                             * break;
-                             * case 90:
-                             * GL11.glRotatef(rotation, 1F, 0F, 1F);
-                             * break;
-                             * case 180:
-                             * GL11.glRotatef(rotation, 0F, 0F, 1F);
-                             * break;
-                             * case 270:
-                             * GL11.glRotatef(rotation, 0F, 0F, 1F);
-                             * break;
-                             * }
-                             */
+        GL11.glPushMatrix();
         GL11.glRotatef(rotation, 0F, 0F, 1F);
         model.renderAll();
         GL11.glPopMatrix();
@@ -100,11 +58,11 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
             tick = 1;
         } else tick = 0;
         if (redstonePower > 14) {
-            if (rotation < 0) {
+            if (rotation < 90) {
                 rotation += 2 * tick;
             }
         } else {
-            if (rotation > -90) {
+            if (rotation > 0) {
                 rotation -= 2 * tick;
             }
         }

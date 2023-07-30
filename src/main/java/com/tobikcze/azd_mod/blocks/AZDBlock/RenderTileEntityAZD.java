@@ -31,7 +31,6 @@ public class RenderTileEntityAZD extends TileEntitySpecialRenderer {
     float z;
     int counterin = 0;
     int rotation;
-
     @Override
     public void renderTileEntityAt(TileEntity te, double posX, double posY, double posZ, float timeSinceLastTick) {
         this.x = (float) posX;
@@ -54,9 +53,7 @@ public class RenderTileEntityAZD extends TileEntitySpecialRenderer {
         GL11.glPopMatrix();
         GL11.glPopMatrix();
     }
-
     int counter = 0;
-
     public void textureHandle() {
         if (counterin != counter) {
             counter = counterin;
