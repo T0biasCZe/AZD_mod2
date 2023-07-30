@@ -1572,6 +1572,7 @@ def getSecondaryArtifacts() {
     return secondaryArtifacts
 }
 
+
 // For easier scripting of things that require variables defined earlier in the buildscript
 if (file('addon.late.gradle.kts').exists()) {
     apply from: 'addon.late.gradle.kts'
