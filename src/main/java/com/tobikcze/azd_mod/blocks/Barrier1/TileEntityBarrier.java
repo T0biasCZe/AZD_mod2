@@ -9,26 +9,20 @@ import net.minecraft.world.World;
 
 public class TileEntityBarrier extends TileEntity {
 
-    /* Rotation */
     public float rotation = 0;
-    /* Scale */
-    public float scale = 1;
-    public boolean state = true;
     public int redstonePower = 0;
-    public int counter = 0;
+    public int counterin = 0;
+    public int counter = -1;
+    public int redstonePower2 = 0;
+    public int tick = 0;
 
     @Override
     public void updateEntity() {
-        counter++;
+        counterin++;
         World world = this.worldObj;
         redstonePower = world.getStrongestIndirectPower(this.xCoord, this.yCoord - 3, this.zCoord);
     }
 
-    public int rotation2;
-
-    public void setRotation(int rotation) {
-        this.rotation2 = rotation;
-    }
 
     @Override
     public Packet getDescriptionPacket() {
@@ -47,7 +41,12 @@ public class TileEntityBarrier extends TileEntity {
     @Override
     public void writeToNBT(NBTTagCompound compound) {
         super.writeToNBT(compound);
-        compound.setInteger("rotation", rotation2);
+        compound.setFloat("rotation", rotation);
+        compound.setInteger("redstonePower", redstonePower);
+        compound.setInteger("counterin", counterin);
+        compound.setInteger("counter", counter);
+        compound.setInteger("redstonePower2", redstonePower2);
+        compound.setInteger("tick", tick);
         this.markDirty();
     }
 
@@ -55,6 +54,12 @@ public class TileEntityBarrier extends TileEntity {
     @Override
     public void readFromNBT(NBTTagCompound compound) {
         super.readFromNBT(compound);
-        rotation2 = compound.getInteger("rotation");
+        rotation = compound.getFloat("rotation");
+        redstonePower = compound.getInteger("redstonePower");
+        counterin = compound.getInteger("counterin");
+        counter = compound.getInteger("counter");
+        redstonePower2 = compound.getInteger("redstonePower2");
+        tick = compound.getInteger("tick");
+
     }
 }

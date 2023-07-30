@@ -13,35 +13,30 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
     ResourceLocation texture;
     ResourceLocation objModelLocation;
     IModelCustom model;
-    int firstload = 0;
 
     public RenderTileEntityBarrier() {
-        firstload = 0;
-        System.out.println("veemo");
         texture = new ResourceLocation("azd", "models/Barrier.png");
         objModelLocation = new ResourceLocation("azd", "models/Barrier_0.obj");
         model = AdvancedModelLoader.loadModel(objModelLocation);
     }
-
-    public int redstonePower;
-    float timeSinceLastTick;
-    float rotation = 0;
-    int counterin = 0;
-
     @Override
     public void renderTileEntityAt(TileEntity te, double posX, double posY, double posZ, float timeSinceLastTick) {
         TileEntityBarrier te2 = (TileEntityBarrier) te;
-        this.timeSinceLastTick = timeSinceLastTick;
-        redstonePower = te2.redstonePower;
-        counterin = te2.counter;
-        int rotation2 = te2.rotation2;
-        float scale = te2.scale;
-        calcRotation();
+        int redstonePower = te2.redstonePower;
+        int counterin = te2.counterin;
+        int counter = te2.counter;
+        int tick = te2.tick;
+        float rotation = te2.rotation;
+        double[] e = calcRotation(rotation, counterin, counter, redstonePower, tick);
+        te2.rotation = (int) e[0];
+        te2.tick = (int) e[1];
+        te2.counterin = (int) e[2];
+        te2.counter = (int) e[3];
+
 
         bindTexture(texture);
         GL11.glPushMatrix();
         GL11.glTranslated(posX + 0.5 - 0.2, posY + 0.1, posZ + 0.5);
-        GL11.glScalef(scale, scale, scale);
         GL11.glPushMatrix();
         GL11.glRotatef(rotation, 0F, 0F, 1F);
         model.renderAll();
@@ -49,10 +44,7 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
         GL11.glPopMatrix();
     }
 
-    int counter = 0;
-    public int tick = 0;
-
-    public void calcRotation() {
+    public double[] calcRotation(double rotation, int counterin, int counter, int redstonePower, int tick) {
         if (counterin != counter) {
             counter = counterin;
             tick = 1;
@@ -66,5 +58,6 @@ public class RenderTileEntityBarrier extends TileEntitySpecialRenderer {
                 rotation -= 2 * tick;
             }
         }
+        return new double[]{(double) rotation, (int) tick, (int) counterin, (int) counter};
     }
 }
