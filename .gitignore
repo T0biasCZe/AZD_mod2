@@ -1,37 +1,31 @@
-.gradle
-.settings
-/.idea/
-/.vscode/
-/run/
-/build/
-/eclipse/
-.classpath
-.project
-/bin/
-/config/
-/crash-reports/
-/logs/
-options.txt
-/saves/
-usernamecache.json
-banned-ips.json
-banned-players.json
-eula.txt
-ops.json
-server.properties
-servers.dat
-usercache.json
-whitelist.json
-/out/
-*.iml
-*.ipr
-*.iws
-src/main/resources/mixins.*([!.]).json
-*.bat
-*.DS_Store
+# Based on Applied Energistics 2 file, credit to them.
+# exclude everything
+/*
+
+# include important folders
+# need gradle 
+!gradle/
+!gradlew
 !gradlew.bat
-.factorypath
-addon.local.gradle
-addon.local.gradle.kts
-addon.late.local.gradle
-addon.late.local.gradle.kts
+!build.gradle
+!gradle.properties
+
+# include markdowns
+!README.md
+!LICENSE
+!CONTRIBUTING.md
+
+# include sourcecode
+!src/
+
+# exclude old files for now
+src/main/resources/assets/roadstuff/RoadWorksMod.psd
+src/main/resources/assets/roadstuff/textures/blocks/asphaltold/
+src/main/resources/assets/roadstuff/textures/blocks/concreteold/
+
+# include git important files
+!.gitmodules
+!.gitignore
+
+# code format to reduce noise in git commits
+!codeformat/
