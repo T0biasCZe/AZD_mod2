@@ -51,7 +51,7 @@ public class azd_mod {
         GameRegistry.registerTileEntity(TileEntityAZD.class, "tileAZD");
         ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAZD.class, new RenderTileEntityAZD());
 
-        azdBlock = new AZDBlock().setBlockName("AzdBlock").setBlockTextureName("azd:itemAzd.png");
+        azdBlock = new AZDBlock().setBlockName("AzdBlock");
         GameRegistry.registerBlock(azdBlock, azdBlock.getUnlocalizedName().substring(5));
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
 
