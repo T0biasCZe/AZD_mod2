@@ -1,0 +1,9 @@
+tile.CrossBlock.name="AZD 97 Cross"
+item.CrossBlockMulti.name="AZD 97 Cross 2x"
+item.azd_barrier.name="AZD 99 Barrier"
+
+tile.AzdBlock.name="AZD 97"
+tile.BarrierBlock0.name="AZD 99 Barrier North"
+tile.BarrierBlock1.name="AZD 99 Barrier East"
+tile.BarrierBlock2.name="AZD 99 Barrier South"
+tile.BarrierBlock3.name="AZD 99 Barrier West"

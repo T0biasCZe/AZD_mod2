@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 public class AZDBlock extends BlockContainer {
 
     public AZDBlock() {
-        super(Material.cloth);
+        super(Material.iron);
         this.setBlockName("AzdBlock");
         this.setCreativeTab(CreativeTabs.tabBlock);
         this.setBlockTextureName("azd_mod:itemAzd.png");

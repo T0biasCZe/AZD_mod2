@@ -1,7 +1,0 @@
-tile.CrossBlock.name="AZD 97 kříž"
-item.CrossBlockMulti.name="AZD 97 kříž 2x"
-tile.AzdBlock.name="AZD 97"
-tile.BarrierBlock0.name="AZD 97 Bariera North"
-tile.BarrierBlock1.name="AZD 97 Bariera East"
-tile.BarrierBlock2.name="AZD 97 Bariera South"
-tile.BarrierBlock3.name="AZD 97 Bariera West"
