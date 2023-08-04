@@ -23,7 +23,7 @@ public class ItemAzdBarrier extends Item {
     @Override
     public boolean onItemUse(ItemStack stack, EntityPlayer player, World world, int x, int y, int z, int side, float hitX, float hiStY, float hitZ) {
         // Get the direction the player is facing
-        int facing = MathHelper.floor_double((double) (player.rotationYaw * 4.0F / 360.0F) + 0.5D) % 4;
+        int facing = MathHelper.floor_double((double) (player.rotationYaw * 4.0F / 360.0F) + 0.5D) & 3;
         // Determine the block to place based on the player's facing direction
         Block blockVariant;
         switch (facing) {
