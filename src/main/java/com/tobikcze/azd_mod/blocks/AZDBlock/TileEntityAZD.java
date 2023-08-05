@@ -112,9 +112,12 @@ public class TileEntityAZD extends TileEntity {
             World world = Minecraft.getMinecraft().theWorld;
             // calculate diagonal distance from 0,0,0 to the x,y,z
             double distance = Math.sqrt(x * x + y * y + z * z);
-            //System.out.println(distance);
+			if(distance < 0.1) return;
+            System.out.println(distance);
             //System.out.println("x: " + x + " y: " + y + " z: " + z);
-            int volume = 150 - (int) (distance * 4);
+            int volume = 150 - (int) (distance * 3.5d);
+			if(volume < 87 && distance < 32) volume = 87;
+			System.out.println(volume);
             world.playSound(x, y, z, "azd:pe_ble", volume, 1, false);
         } catch (Exception e) {
             //System.out.println("Catched exception while playing sound: " + e);
