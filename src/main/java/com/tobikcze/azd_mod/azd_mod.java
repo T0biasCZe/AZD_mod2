@@ -30,8 +30,7 @@ import cpw.mods.fml.common.registry.GameRegistry;
     modid = Reference.MOD_ID,
     version = Reference.VERSION,
     name = Reference.NAME,
-    acceptedMinecraftVersions = "[1.7.10]",
-    useMetadata = true
+    acceptedMinecraftVersions = "[1.7.10]"
 )
 public class azd_mod {
 
