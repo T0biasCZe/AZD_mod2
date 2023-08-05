@@ -2,5 +2,25 @@
   "pe_ble": {
     "category": "block",
     "sounds": [ "azd:pe_ble" ]
+  },
+    "pe_ble75": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble75" ]
+  },
+    "pe_ble50": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble50" ]
+  },
+    "pe_ble25": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble25" ]
+  },
+    "pe_ble12": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble12" ]
+  },
+    "pe_ble5": {
+    "category": "block",
+    "sounds": [ "azd:pe_ble5" ]
   }
 }

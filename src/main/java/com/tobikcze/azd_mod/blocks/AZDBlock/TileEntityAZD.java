@@ -1,6 +1,8 @@
 package com.tobikcze.azd_mod.blocks.AZDBlock;
 
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.audio.SoundCategory;
+import net.minecraft.client.multiplayer.WorldClient;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
@@ -113,12 +115,16 @@ public class TileEntityAZD extends TileEntity {
             // calculate diagonal distance from 0,0,0 to the x,y,z
             double distance = Math.sqrt(x * x + y * y + z * z);
 			if(distance < 0.1) return;
-            System.out.println(distance);
-            //System.out.println("x: " + x + " y: " + y + " z: " + z);
-            int volume = 150 - (int) (distance * 3.5d);
-			if(volume < 87 && distance < 32) volume = 87;
-			System.out.println(volume);
-            world.playSound(x, y, z, "azd:pe_ble", volume, 1, false);
+            //System.out.println(distance);
+            String sound;
+            if(distance < 10) sound = "azd:pe_ble";
+            else if(distance < 15) sound = "azd:pe_ble75";
+            else if(distance < 20) sound = "azd:pe_ble50";
+            else if(distance < 25) sound = "azd:pe_ble25";
+            else if(distance < 30) sound = "azd:pe_ble12";
+            else sound = "azd:pe_ble5";
+            if(distance > 50) return;
+            world.playSound(x, y, z, sound, 1000, 1, false);
         } catch (Exception e) {
             //System.out.println("Catched exception while playing sound: " + e);
         }
