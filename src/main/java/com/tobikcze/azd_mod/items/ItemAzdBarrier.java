@@ -12,7 +12,7 @@ import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
 public class ItemAzdBarrier extends Item {
-    public ItemAzdBarrier() {
+    public ItemAzdBarrier(String unlocalizedName) {
         // Set appropriate prperties for your item, such as name and creative tab
         setUnlocalizedName("azd_barrier");
         setCreativeTab(CreativeTabs.tabBlock);

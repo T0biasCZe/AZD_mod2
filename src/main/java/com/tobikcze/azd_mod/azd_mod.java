@@ -45,7 +45,7 @@ public class azd_mod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         // Item/Block init and registering
-        itemAzdBarrier = new ItemAzdBarrier();
+        itemAzdBarrier = new ItemAzdBarrier("azd_barrier");
         GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
 
         GameRegistry.registerTileEntity(TileEntityAZD.class, "tileAZD");
