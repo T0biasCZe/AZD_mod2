@@ -80,15 +80,7 @@ public class TileEntityAZD extends TileEntity {
         currenttex = compound.getInteger("currenttex");
 
     }
-    long time = 0;
-    int tps;
     public void textureHandle() {
-        tps++;
-        if(System.currentTimeMillis() > time + 1000 || time == 0){
-            System.out.println(tps);
-            tps = 0;
-            time = System.currentTimeMillis();
-        }
         currenttex_dur++;
         if (redstonePower > 11) {
             // blinking red
@@ -123,14 +115,14 @@ public class TileEntityAZD extends TileEntity {
     public void playSound() {
         try {
             World world = Minecraft.getMinecraft().theWorld;
-            // calculate diagonal distance from 0,0,0 to the x,y,z
-            System.out.println("x: " + xCoord + " y: " + yCoord + " z: " + zCoord);
+            //System.out.println("x: " + xCoord + " y: " + yCoord + " z: " + zCoord);
             //get player position
             double px = Minecraft.getMinecraft().thePlayer.posX;
             double py = Minecraft.getMinecraft().thePlayer.posY;
             double pz = Minecraft.getMinecraft().thePlayer.posZ;
             double distance = Math.sqrt(Math.pow(px - xCoord, 2) + Math.pow(py - yCoord, 2) + Math.pow(pz - zCoord, 2));
 
+            if(distance > 50) return;
             String sound;
             if(distance < 5) sound = "azd:pe_ble";
             else if(distance < 10) sound = "azd:pe_ble75";
@@ -138,7 +130,6 @@ public class TileEntityAZD extends TileEntity {
             else if(distance < 25) sound = "azd:pe_ble25";
             else if(distance < 35) sound = "azd:pe_ble12";
             else sound = "azd:pe_ble5";
-            if(distance > 50) return;
             world.playSound(x, y, z, sound, 1000, 1, false);
         } catch (Exception e) {
             //System.out.println("Catched exception while playing sound: " + e);
