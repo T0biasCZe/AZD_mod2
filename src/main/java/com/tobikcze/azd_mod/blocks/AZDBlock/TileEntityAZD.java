@@ -8,9 +8,12 @@ import net.minecraft.network.NetworkManager;
 import net.minecraft.network.Packet;
 import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
+import static java.lang.System.currentTimeMillis;
+import static java.lang.System.out;
 public class TileEntityAZD extends TileEntity {
 
     public int redstonePower = 0;
@@ -23,12 +26,13 @@ public class TileEntityAZD extends TileEntity {
     public int z = 0;
     public ResourceLocation texture = new ResourceLocation("azd", "models/Azd97_0.png");
 
-
+    boolean init = true;
     @Override
     public void updateEntity() {
         World world = this.worldObj;
         redstonePower = world.getStrongestIndirectPower(this.xCoord, this.yCoord - 2, this.zCoord);
-        textureHandle();
+        if(world.isRemote) textureHandle();
+
     }
 
     public int rotation;
@@ -76,8 +80,15 @@ public class TileEntityAZD extends TileEntity {
         currenttex = compound.getInteger("currenttex");
 
     }
-
+    long time = 0;
+    int tps;
     public void textureHandle() {
+        tps++;
+        if(System.currentTimeMillis() > time + 1000 || time == 0){
+            System.out.println(tps);
+            tps = 0;
+            time = System.currentTimeMillis();
+        }
         currenttex_dur++;
         if (redstonePower > 11) {
             // blinking red
@@ -113,15 +124,19 @@ public class TileEntityAZD extends TileEntity {
         try {
             World world = Minecraft.getMinecraft().theWorld;
             // calculate diagonal distance from 0,0,0 to the x,y,z
-            double distance = Math.sqrt(x * x + y * y + z * z);
-			if(distance < 0.1) return;
-            //System.out.println(distance);
+            System.out.println("x: " + xCoord + " y: " + yCoord + " z: " + zCoord);
+            //get player position
+            double px = Minecraft.getMinecraft().thePlayer.posX;
+            double py = Minecraft.getMinecraft().thePlayer.posY;
+            double pz = Minecraft.getMinecraft().thePlayer.posZ;
+            double distance = Math.sqrt(Math.pow(px - xCoord, 2) + Math.pow(py - yCoord, 2) + Math.pow(pz - zCoord, 2));
+
             String sound;
-            if(distance < 10) sound = "azd:pe_ble";
-            else if(distance < 15) sound = "azd:pe_ble75";
-            else if(distance < 20) sound = "azd:pe_ble50";
+            if(distance < 5) sound = "azd:pe_ble";
+            else if(distance < 10) sound = "azd:pe_ble75";
+            else if(distance < 15) sound = "azd:pe_ble50";
             else if(distance < 25) sound = "azd:pe_ble25";
-            else if(distance < 30) sound = "azd:pe_ble12";
+            else if(distance < 35) sound = "azd:pe_ble12";
             else sound = "azd:pe_ble5";
             if(distance > 50) return;
             world.playSound(x, y, z, sound, 1000, 1, false);
