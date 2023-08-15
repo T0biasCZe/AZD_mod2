@@ -13,6 +13,10 @@ import net.minecraft.world.World;
 
 public class ItemAzdBarrier extends Item {
     public ItemAzdBarrier(String azd_barrier) {
+        // Set appropriate prperties for your item, such as name and creative tab
+        setUnlocalizedName("azd_barrier");
+        setTextureName("azd:itemAzdBarrier");
+
     }
 
     @Override
