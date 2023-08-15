@@ -14,7 +14,6 @@ public class CrossBlock extends BlockContainer {
     public CrossBlock() {
         super(Material.cloth);
         this.setBlockName("AzdCrossBlock");
-        this.setCreativeTab(CreativeTabs.tabBlock);
     }
 
     @Override

@@ -9,12 +9,12 @@ import com.tobikcze.azd_mod.blocks.Cross.TileEntityCross;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
 import net.minecraftforge.common.MinecraftForge;
 
-import static com.tobikcze.azd_mod.azd_mod.azdBlock;
-import static com.tobikcze.azd_mod.azd_mod.crossBlock;
+import static com.tobikcze.azd_mod.azd_mod.*;
 
 public class ClientProxy extends CommonProxy {
 
@@ -32,6 +32,11 @@ public class ClientProxy extends CommonProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier());
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
+
+        itemAzdBarrier.setCreativeTab(CreativeTabs.tabBlock);
+        azdBlock.setCreativeTab(CreativeTabs.tabBlock);
+        crossBlock.setCreativeTab(CreativeTabs.tabBlock);
+
         System.out.println("veemo");
     }
     @Override
