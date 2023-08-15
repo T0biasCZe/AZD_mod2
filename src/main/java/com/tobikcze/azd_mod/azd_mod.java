@@ -99,7 +99,7 @@ public class azd_mod {
     public void init(FMLInitializationEvent event) {
         proxy.init(event);
         // Proxy, TileEntity, entity, GUI and Packet registering
-        //MinecraftForge.EVENT_BUS.register(new RenderTileEntityAZD());
+
         System.out.println("super weegie galaxyyy");
 
         GameRegistry.addRecipe(new net.minecraft.item.ItemStack(azdBlock, 1), new Object[]{"GLG", "NIN", "SRS", 'G', Blocks.glass_pane, 'L', Blocks.redstone_lamp, 'N', Blocks.noteblock, 'I', Items.iron_ingot, 'S', Blocks.stone, 'R', Items.redstone});

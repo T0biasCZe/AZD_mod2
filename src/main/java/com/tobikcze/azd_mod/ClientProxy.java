@@ -3,12 +3,15 @@ package com.tobikcze.azd_mod;
 
 import com.tobikcze.azd_mod.blocks.AZDBlock.RenderTileEntityAZD;
 import com.tobikcze.azd_mod.blocks.AZDBlock.TileEntityAZD;
+import com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier;
 import com.tobikcze.azd_mod.blocks.Cross.RenderTileEntityCross;
 import com.tobikcze.azd_mod.blocks.Cross.TileEntityCross;
 import cpw.mods.fml.client.registry.ClientRegistry;
+import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
+import net.minecraftforge.common.MinecraftForge;
 
 import static com.tobikcze.azd_mod.azd_mod.azdBlock;
 import static com.tobikcze.azd_mod.azd_mod.crossBlock;
@@ -30,6 +33,16 @@ public class ClientProxy extends CommonProxy {
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
         MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
         System.out.println("veemo");
+    }
+    @Override
+    public void init(FMLInitializationEvent event) {
+        super.init(event);
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityAZD());
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityBarrier());
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityCross());
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityBarrier());
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityBarrier());
+        MinecraftForge.EVENT_BUS.register(new RenderTileEntityBarrier());
     }
 
 }
