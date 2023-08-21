@@ -11,12 +11,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class CrossBlock extends BlockContainer {
+public class CrossBlock extends Block {
 
     public CrossBlock() {
         super(Material.iron);
     }
-
+/*
     @Override
     public boolean renderAsNormalBlock() {
         return false;
@@ -36,7 +36,7 @@ public class CrossBlock extends BlockContainer {
     public TileEntity createNewTileEntity(World world, int par2) {
         TileEntityCross tileEntityCross = new TileEntityCross();
         return tileEntityCross;
-    }
+    }*/
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
         dropCustomItem(world, x, y, z); // Custom method to drop the custom item
         super.breakBlock(world, x, y, z, block, metadata);

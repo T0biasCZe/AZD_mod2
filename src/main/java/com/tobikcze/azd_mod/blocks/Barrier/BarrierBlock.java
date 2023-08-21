@@ -12,13 +12,13 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BarrierBlock extends BlockContainer {
+public class BarrierBlock extends Block {
 
     public BarrierBlock() {
         super(Material.iron);
     }
 
-    @Override
+    /*@Override
     public boolean renderAsNormalBlock() {
         return false;
     }
@@ -43,7 +43,7 @@ public class BarrierBlock extends BlockContainer {
         dropCustomItem(world, x, y, z); // Custom method to drop the custom item
         super.breakBlock(world, x, y, z, block, metadata);
     }
-
+*/
     private void dropCustomItem(World world, int x, int y, int z) {
         // Spawn your custom item as an EntityItem at the block's position
         if (!world.isRemote) {

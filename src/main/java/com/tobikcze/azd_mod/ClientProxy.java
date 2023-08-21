@@ -26,7 +26,7 @@ public class ClientProxy extends CommonProxy {
     public void preInit(FMLPreInitializationEvent event) {
         super.preInit(event);
 
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, "tileBarrier0");
+        /*GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, "tileBarrier0");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, "tileBarrier1");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, "tileBarrier2");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, "tileBarrier3");
@@ -51,7 +51,7 @@ public class ClientProxy extends CommonProxy {
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier1.RenderTileEntityBarrier());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier());
         //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
+        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));*/
 
         itemAzdBarrier.setCreativeTab(CreativeTabs.tabBlock);
         itemAzdBlock.setCreativeTab(CreativeTabs.tabBlock);
