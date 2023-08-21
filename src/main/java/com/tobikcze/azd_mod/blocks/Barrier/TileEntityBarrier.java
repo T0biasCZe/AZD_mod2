@@ -23,7 +23,7 @@ public class TileEntityBarrier extends TileEntity {
         redstonePower = world.getStrongestIndirectPower(this.xCoord, this.yCoord - 3, this.zCoord);
     }
 
-
+/*
     @Override
     public Packet getDescriptionPacket() {
         NBTTagCompound nbtTagCompound = new NBTTagCompound();
@@ -61,5 +61,5 @@ public class TileEntityBarrier extends TileEntity {
         redstonePower2 = compound.getInteger("redstonePower2");
         tick = compound.getInteger("tick");
 
-    }
+    }*/
 }
