@@ -12,7 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BarrierBlock extends BlockContainer {
+public class BarrierBlock extends Block {
 
     public BarrierBlock() {
         super(Material.iron);
@@ -33,10 +33,10 @@ public class BarrierBlock extends BlockContainer {
         return false;
     }
 
-    @Override
+    /*@Override
     public TileEntity createNewTileEntity(World world, int par2) {
         return new TileEntityBarrier();
-    }
+    }*/
 
     //on block break, drop the azd_mod.itemAzdBarrier item
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {

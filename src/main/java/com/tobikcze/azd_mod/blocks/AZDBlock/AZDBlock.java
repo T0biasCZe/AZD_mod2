@@ -12,7 +12,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class AZDBlock extends BlockContainer {
+public class AZDBlock extends Block {
 
     public AZDBlock() {
         super(Material.iron);
@@ -34,7 +34,7 @@ public class AZDBlock extends BlockContainer {
     }
 
     @Override
-    public TileEntity createNewTileEntity(World world, int par2) {
+   /* public TileEntity createNewTileEntity(World world, int par2) {
         try{
             TileEntityAZD tileEntityAZD = new TileEntityAZD();
             return tileEntityAZD;
@@ -43,7 +43,7 @@ public class AZDBlock extends BlockContainer {
             System.out.println("Error creating TileEntityAZD: " + e.getMessage());
             return null;
         }
-    }
+    }*/
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
         dropCustomItem(world, x, y, z); // Custom method to drop the custom item
         super.breakBlock(world, x, y, z, block, metadata);
