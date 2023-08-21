@@ -1,4 +1,3 @@
-tile.CrossBlock.name="ažd 97 kříz"
-tile.CrossBlockMulti.name="ažd 97 kříz 2x"
-item.azd_barrier.name="ažd 99 závora"
-tile.AzdBlock.name="ažd 97"
+item.itemAzdBarrier.name="AZD 99 Zavora"
+item.itemAzdBlock.name="AZD 97 Block"
+item.itemCrossBlock.name="AZD 97 Kříž"

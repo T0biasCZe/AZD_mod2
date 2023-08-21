@@ -1,4 +1,4 @@
-package com.tobikcze.azd_mod.blocks.Cross;
+package com.tobikcze.azd_mod.blocks.Cross2;
 
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;

@@ -1,11 +1,10 @@
-package com.tobikcze.azd_mod.blocks.Cross;
+package com.tobikcze.azd_mod.blocks.Cross2;
 
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.AdvancedModelLoader;
 import net.minecraftforge.client.model.IModelCustom;
-
 import org.lwjgl.opengl.GL11;
 
 public class RenderTileEntityCross extends TileEntitySpecialRenderer {
@@ -34,7 +33,7 @@ public class RenderTileEntityCross extends TileEntitySpecialRenderer {
         bindTexture(texture);
         GL11.glPushMatrix();
         GL11.glTranslated(posX + 0.5, posY, posZ + 0.5);
-        GL11.glRotatef(0, 0F, 1F, 0F);
+        GL11.glRotatef(180, 0F, 1F, 0F);
         GL11.glPushMatrix();
         model.renderAll();
         GL11.glPopMatrix();

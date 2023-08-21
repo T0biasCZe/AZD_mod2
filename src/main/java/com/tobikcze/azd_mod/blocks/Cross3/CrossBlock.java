@@ -1,10 +1,9 @@
-package com.tobikcze.azd_mod.blocks.Cross;
+package com.tobikcze.azd_mod.blocks.Cross3;
 
 import com.tobikcze.azd_mod.azd_mod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;

@@ -5,6 +5,7 @@ import com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier;
 import com.tobikcze.azd_mod.blocks.Cross.RenderTileEntityCross;
 import com.tobikcze.azd_mod.blocks.Cross.TileEntityCross;
 import com.tobikcze.azd_mod.items.ItemAzdBlock;
+import com.tobikcze.azd_mod.items.ItemCrossBlock;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -40,7 +41,7 @@ public class azd_mod {
     public static CommonProxy proxy;
     public static Item itemAzdBarrier;
     public static Item  itemAzdBlock;
-
+    public static Item itemCrossBlock;
     public static Block azdBlock;
     public static Block azdBlock1;
     public static Block azdBlock2;
@@ -50,6 +51,9 @@ public class azd_mod {
     public static Block barrierBlock2;
     public static Block barrierBlock3;
     public static Block crossBlock;
+    public static Block crossBlock1;
+    public static Block crossBlock2;
+    public static Block crossBlock3;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -57,42 +61,47 @@ public class azd_mod {
 
         itemAzdBlock = new ItemAzdBlock().setUnlocalizedName("itemAzdBlock");
         GameRegistry.registerItem(itemAzdBlock, itemAzdBlock.getUnlocalizedName().substring(5));
-        System.out.println("test 1");
         azdBlock = new com.tobikcze.azd_mod.blocks.AZDBlock.AZDBlock().setBlockName("AzdBlock");
         GameRegistry.registerBlock(azdBlock, azdBlock.getUnlocalizedName().substring(5));
-        System.out.println("test 2");
         azdBlock1 = new com.tobikcze.azd_mod.blocks.AZDBlock1.AZDBlock().setBlockName("AzdBlock1");
         GameRegistry.registerBlock(azdBlock1, azdBlock1.getUnlocalizedName().substring(5));
-        System.out.println("test 3");
         azdBlock2 = new com.tobikcze.azd_mod.blocks.AZDBlock2.AZDBlock().setBlockName("AzdBlock2");
         GameRegistry.registerBlock(azdBlock2, azdBlock2.getUnlocalizedName().substring(5));
-        System.out.println("test 4");
         azdBlock3 = new com.tobikcze.azd_mod.blocks.AZDBlock3.AZDBlock().setBlockName("AzdBlock3");
         GameRegistry.registerBlock(azdBlock3, azdBlock3.getUnlocalizedName().substring(5));
-        System.out.println("test 5");
 
 
         itemAzdBarrier = new ItemAzdBarrier().setUnlocalizedName("itemAzdBarrier");;
-        System.out.println("test 5.5");
         GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
-        System.out.println("test 6");
         barrierBlock0 = new com.tobikcze.azd_mod.blocks.Barrier.BarrierBlock().setBlockName("BarrierBlock0");
         GameRegistry.registerBlock(barrierBlock0, barrierBlock0.getUnlocalizedName().substring(5));
-        System.out.println("test 7");
         barrierBlock1 = new com.tobikcze.azd_mod.blocks.Barrier1.BarrierBlock().setBlockName("BarrierBlock1");
         GameRegistry.registerBlock(barrierBlock1, barrierBlock1.getUnlocalizedName().substring(5));
-        System.out.println("test 8");
         barrierBlock2 = new com.tobikcze.azd_mod.blocks.Barrier2.BarrierBlock().setBlockName("BarrierBlock2");
         GameRegistry.registerBlock(barrierBlock2, barrierBlock2.getUnlocalizedName().substring(5));
-        System.out.println("test 9");
         barrierBlock3 = new com.tobikcze.azd_mod.blocks.Barrier3.BarrierBlock().setBlockName("BarrierBlock3");
         GameRegistry.registerBlock(barrierBlock3, barrierBlock3.getUnlocalizedName().substring(5));
-        System.out.println("test 10");
+
+
+        itemCrossBlock = new ItemCrossBlock().setUnlocalizedName("itemCrossBlock");
+        GameRegistry.registerItem(itemCrossBlock, itemCrossBlock.getUnlocalizedName().substring(5));
 
         crossBlock = new com.tobikcze.azd_mod.blocks.Cross.CrossBlock().setBlockName("CrossBlock");
         GameRegistry.registerBlock(crossBlock, crossBlock.getUnlocalizedName().substring(5));
 
-        System.out.println("super luigi galaxyyy");
+        crossBlock1 = new com.tobikcze.azd_mod.blocks.Cross1.CrossBlock().setBlockName("CrossBlock1");
+        GameRegistry.registerBlock(crossBlock1, crossBlock1.getUnlocalizedName().substring(5));
+
+        crossBlock2 = new com.tobikcze.azd_mod.blocks.Cross2.CrossBlock().setBlockName("CrossBlock2");
+        GameRegistry.registerBlock(crossBlock2, crossBlock2.getUnlocalizedName().substring(5));
+
+        crossBlock3 = new com.tobikcze.azd_mod.blocks.Cross3.CrossBlock().setBlockName("CrossBlock3");
+        GameRegistry.registerBlock(crossBlock3, crossBlock3.getUnlocalizedName().substring(5));
+
+
+
+
+
         proxy.preInit(event);
     }
 
@@ -103,11 +112,11 @@ public class azd_mod {
         // Proxy, TileEntity, entity, GUI and Packet registering
 
 
-        GameRegistry.addRecipe(new net.minecraft.item.ItemStack(itemAzdBlock, 1), new Object[]{"GLG", "NIN", "SRS", 'G', Blocks.glass_pane, 'L', Blocks.redstone_lamp, 'N', Blocks.noteblock, 'I', Items.iron_ingot, 'S', Blocks.stone, 'R', Items.redstone});
+        GameRegistry.addRecipe(new ItemStack(itemAzdBlock, 1), new Object[]{"GLG", "NIN", "SRS", 'G', Blocks.glass_pane, 'L', Blocks.redstone_lamp, 'N', Blocks.noteblock, 'I', Items.iron_ingot, 'S', Blocks.stone, 'R', Items.redstone});
 
-        GameRegistry.addRecipe(new net.minecraft.item.ItemStack(itemAzdBarrier, 1), new Object[]{"WRI", "PPM", "WRI", 'W', new ItemStack(Items.dye, 1, 15), 'R', new ItemStack(Items.dye, 1, 1), 'I', Items.iron_ingot, 'P', Blocks.planks, 'M', Blocks.piston});
+        GameRegistry.addRecipe(new ItemStack(itemAzdBarrier, 1), new Object[]{"WRI", "PPM", "WRI", 'W', new ItemStack(Items.dye, 1, 15), 'R', new ItemStack(Items.dye, 1, 1), 'I', Items.iron_ingot, 'P', Blocks.planks, 'M', Blocks.piston});
 
-        GameRegistry.addRecipe(new ItemStack(crossBlock, 1), new Object[]{"R R", " R ", "RIR", 'R', new ItemStack(Items.dye, 1, 1), 'I', Items.iron_ingot});
+        GameRegistry.addRecipe(new ItemStack(itemCrossBlock, 1), new Object[]{"R R", " R ", "RIR", 'R', new ItemStack(Items.dye, 1, 1), 'I', Items.iron_ingot});
     }
 
     @EventHandler

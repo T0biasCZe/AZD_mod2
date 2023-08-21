@@ -30,23 +30,32 @@ public class ClientProxy extends CommonProxy {
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, "tileBarrier1");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, "tileBarrier2");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, "tileBarrier3");
+
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, "tileCross");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross1.TileEntityCross.class, "tileCross1");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross2.TileEntityCross.class, "tileCross2");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross3.TileEntityCross.class, "tileCross3");
 
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock.RenderTileEntityAZD());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock1.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock1.RenderTileEntityAZD());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock2.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock2.RenderTileEntityAZD());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock3.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock3.RenderTileEntityAZD());
+
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, new com.tobikcze.azd_mod.blocks.Cross.RenderTileEntityCross());
+        ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Cross1.TileEntityCross.class, new com.tobikcze.azd_mod.blocks.Cross1.RenderTileEntityCross());
+        ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Cross2.TileEntityCross.class, new com.tobikcze.azd_mod.blocks.Cross2.RenderTileEntityCross());
+        ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Cross3.TileEntityCross.class, new com.tobikcze.azd_mod.blocks.Cross3.RenderTileEntityCross());
+
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier3.RenderTileEntityBarrier());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier2.RenderTileEntityBarrier());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier1.RenderTileEntityBarrier());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier());
         //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
-        MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
+        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
 
         itemAzdBarrier.setCreativeTab(CreativeTabs.tabBlock);
         itemAzdBlock.setCreativeTab(CreativeTabs.tabBlock);
-        crossBlock.setCreativeTab(CreativeTabs.tabBlock);
+        itemCrossBlock.setCreativeTab(CreativeTabs.tabBlock);
 
         System.out.println("veemo");
     }

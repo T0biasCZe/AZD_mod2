@@ -10,6 +10,7 @@ import net.minecraft.world.World;
 
 public class ItemAzdBlock extends Item {
     public ItemAzdBlock() {
+        this.setTextureName("azd_mod:itemAzd");
     }
 
     @Override
