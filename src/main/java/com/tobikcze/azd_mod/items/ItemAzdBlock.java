@@ -23,13 +23,13 @@ public class ItemAzdBlock extends Item {
                 blockVariant = azd_mod.azdBlock2;
                 break;
             case 1: // West
-                blockVariant = azd_mod.azdBlock3;
+                blockVariant = azd_mod.azdBlock1;
                 break;
             case 2: // North
                 blockVariant = azd_mod.azdBlock;
                 break;
             default: // East
-                blockVariant = azd_mod.azdBlock1;
+                blockVariant = azd_mod.azdBlock3;
                 break;
         }
         switch (side) {

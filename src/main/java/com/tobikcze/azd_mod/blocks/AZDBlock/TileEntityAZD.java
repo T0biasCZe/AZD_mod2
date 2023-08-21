@@ -39,52 +39,6 @@ public class TileEntityAZD extends TileEntity {
         }
 
     }
-
-    public int rotation;
-
-    public void setRotation(int rotation) {
-        this.rotation = rotation;
-    }
-    /*
-    @Override
-    public Packet getDescriptionPacket() {
-        NBTTagCompound nbtTagCompound = new NBTTagCompound();
-        writeToNBT(nbtTagCompound);
-        int metadata = getBlockMetadata();
-        return new S35PacketUpdateTileEntity(this.xCoord, this.yCoord, this.zCoord, metadata, nbtTagCompound);
-    }
-
-    @Override
-    public void onDataPacket(NetworkManager net, S35PacketUpdateTileEntity pkt) {
-        readFromNBT(pkt.func_148857_g());
-    }
-
-    // Save the rotation to NBT data when the world is saved
-    @Override
-    public void writeToNBT(NBTTagCompound compound) {
-        super.writeToNBT(compound);
-        compound.setInteger("rotation", rotation);
-        compound.setInteger("redstonePower", redstonePower);
-        compound.setInteger("counterin", counterin);
-        compound.setInteger("counter", counter);
-        compound.setInteger("currenttex_dur", currenttex_dur);
-        compound.setInteger("currenttex", currenttex);
-
-        this.markDirty();
-    }
-
-    // Load the rotation from NBT data when the world is loaded
-    @Override
-    public void readFromNBT(NBTTagCompound compound) {
-        super.readFromNBT(compound);
-        rotation = compound.getInteger("rotation");
-        redstonePower = compound.getInteger("redstonePower");
-        counterin = compound.getInteger("counterin");
-        counter = compound.getInteger("counter");
-        currenttex_dur = compound.getInteger("currenttex_dur");
-        currenttex = compound.getInteger("currenttex");
-
-    }*/
     public void textureHandle() {
         currenttex_dur++;
         if (redstonePower > 11) {

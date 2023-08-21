@@ -9,6 +9,7 @@ import com.tobikcze.azd_mod.blocks.Cross.TileEntityCross;
 import cpw.mods.fml.client.registry.ClientRegistry;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.registry.GameRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.MinecraftForgeClient;
@@ -24,6 +25,13 @@ public class ClientProxy extends CommonProxy {
     @Override
     public void preInit(FMLPreInitializationEvent event) {
         super.preInit(event);
+
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, "tileBarrier0");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, "tileBarrier1");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, "tileBarrier2");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, "tileBarrier3");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, "tileCross");
+
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock.RenderTileEntityAZD());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock1.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock1.RenderTileEntityAZD());
         ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.AZDBlock2.TileEntityAZD.class, new com.tobikcze.azd_mod.blocks.AZDBlock2.RenderTileEntityAZD());

@@ -76,25 +76,20 @@ public class azd_mod {
         System.out.println("test 5.5");
         GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
         System.out.println("test 6");
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, "tileBarrier0");
         barrierBlock0 = new com.tobikcze.azd_mod.blocks.Barrier.BarrierBlock().setBlockName("BarrierBlock0");
         GameRegistry.registerBlock(barrierBlock0, barrierBlock0.getUnlocalizedName().substring(5));
         System.out.println("test 7");
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, "tileBarrier1");
         barrierBlock1 = new com.tobikcze.azd_mod.blocks.Barrier1.BarrierBlock().setBlockName("BarrierBlock1");
         GameRegistry.registerBlock(barrierBlock1, barrierBlock1.getUnlocalizedName().substring(5));
         System.out.println("test 8");
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, "tileBarrier2");
         barrierBlock2 = new com.tobikcze.azd_mod.blocks.Barrier2.BarrierBlock().setBlockName("BarrierBlock2");
         GameRegistry.registerBlock(barrierBlock2, barrierBlock2.getUnlocalizedName().substring(5));
         System.out.println("test 9");
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, "tileBarrier3");
         barrierBlock3 = new com.tobikcze.azd_mod.blocks.Barrier3.BarrierBlock().setBlockName("BarrierBlock3");
         GameRegistry.registerBlock(barrierBlock3, barrierBlock3.getUnlocalizedName().substring(5));
         System.out.println("test 10");
 
         crossBlock = new com.tobikcze.azd_mod.blocks.Cross.CrossBlock().setBlockName("CrossBlock");
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, "tileCross");
         GameRegistry.registerBlock(crossBlock, crossBlock.getUnlocalizedName().substring(5));
 
         System.out.println("super luigi galaxyyy");

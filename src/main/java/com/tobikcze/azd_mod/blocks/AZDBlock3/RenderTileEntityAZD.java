@@ -26,12 +26,11 @@ public class RenderTileEntityAZD extends TileEntitySpecialRenderer {
         te2.z = (int) posZ;
 
         texture = te2.texture;
-        int rotation = te2.rotation;
 
         bindTexture(texture);
         GL11.glPushMatrix();
         GL11.glTranslated(posX + 0.5, posY, posZ + 0.5);
-        GL11.glRotatef(rotation, 0F, 1F, 0F);
+        GL11.glRotatef(270, 0F, 1F, 0F);
         GL11.glPushMatrix();
         model.renderAll();
         GL11.glPopMatrix();
