@@ -59,7 +59,12 @@ public class TileEntityAZD extends TileEntity {
         } else {
             currenttex = 0;
         }
-        texture = new ResourceLocation("azd", "models/Azd97_" + currenttex + ".png");
+        try{
+            texture = new ResourceLocation("azd", "models/Azd97_" + currenttex + ".png");
+        }
+        catch(Exception e){
+            System.out.println("Unable to load texture: " + e);
+        }
     }
 
     public void playSound() {
