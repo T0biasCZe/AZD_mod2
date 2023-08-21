@@ -1,19 +1,10 @@
-package com.tobikcze.azd_mod.blocks.AZDBlock;
+package com.tobikcze.azd_mod.blocks.AZDBlock2;
 
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.audio.SoundCategory;
-import net.minecraft.client.multiplayer.WorldClient;
-import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.network.NetworkManager;
-import net.minecraft.network.Packet;
-import net.minecraft.network.play.server.S35PacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.ChatComponentText;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 
-import static java.lang.System.currentTimeMillis;
-import static java.lang.System.out;
 public class TileEntityAZD extends TileEntity {
 
     public int redstonePower = 0;

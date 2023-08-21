@@ -15,8 +15,7 @@ import net.minecraft.world.World;
 public class BarrierBlock extends BlockContainer {
 
     public BarrierBlock() {
-        super(Material.cloth);
-        this.setBlockName("BarrierBlock");
+        super(Material.iron);
     }
 
     @Override

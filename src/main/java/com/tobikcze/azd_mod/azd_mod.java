@@ -4,6 +4,7 @@ import com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier;
 import com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier;
 import com.tobikcze.azd_mod.blocks.Cross.RenderTileEntityCross;
 import com.tobikcze.azd_mod.blocks.Cross.TileEntityCross;
+import com.tobikcze.azd_mod.items.ItemAzdBlock;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -38,8 +39,12 @@ public class azd_mod {
     @SidedProxy(clientSide = "com.tobikcze.azd_mod.ClientProxy", serverSide = "com.tobikcze.azd_mod.CommonProxy")
     public static CommonProxy proxy;
     public static Item itemAzdBarrier;
+    public static Item  itemAzdBlock;
 
     public static Block azdBlock;
+    public static Block azdBlock1;
+    public static Block azdBlock2;
+    public static Block azdBlock3;
     public static Block barrierBlock0;
     public static Block barrierBlock1;
     public static Block barrierBlock2;
@@ -49,60 +54,61 @@ public class azd_mod {
     @EventHandler
     public void preInit(FMLPreInitializationEvent event) {
         // Item/Block init and registering
-        itemAzdBarrier = new ItemAzdBarrier("azd_barrier");
-        GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
 
-        GameRegistry.registerTileEntity(TileEntityAZD.class, "tileAZD");
-
-        //ClientRegistry.bindTileEntitySpecialRenderer(TileEntityAZD.class, new RenderTileEntityAZD());
-
-        azdBlock = new AZDBlock().setBlockName("AzdBlock");
+        itemAzdBlock = new ItemAzdBlock().setUnlocalizedName("itemAzdBlock");
+        GameRegistry.registerItem(itemAzdBlock, itemAzdBlock.getUnlocalizedName().substring(5));
+        System.out.println("test 1");
+        azdBlock = new com.tobikcze.azd_mod.blocks.AZDBlock.AZDBlock().setBlockName("AzdBlock");
         GameRegistry.registerBlock(azdBlock, azdBlock.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(azdBlock), new GenericBlockItemRenderer(new RenderTileEntityAZD(), new TileEntityAZD()));
+        System.out.println("test 2");
+        azdBlock1 = new com.tobikcze.azd_mod.blocks.AZDBlock1.AZDBlock().setBlockName("AzdBlock1");
+        GameRegistry.registerBlock(azdBlock1, azdBlock1.getUnlocalizedName().substring(5));
+        System.out.println("test 3");
+        azdBlock2 = new com.tobikcze.azd_mod.blocks.AZDBlock2.AZDBlock().setBlockName("AzdBlock2");
+        GameRegistry.registerBlock(azdBlock2, azdBlock2.getUnlocalizedName().substring(5));
+        System.out.println("test 4");
+        azdBlock3 = new com.tobikcze.azd_mod.blocks.AZDBlock3.AZDBlock().setBlockName("AzdBlock3");
+        GameRegistry.registerBlock(azdBlock3, azdBlock3.getUnlocalizedName().substring(5));
+        System.out.println("test 5");
 
 
+        itemAzdBarrier = new ItemAzdBarrier().setUnlocalizedName("itemAzdBarrier");;
+        System.out.println("test 5.5");
+        GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
+        System.out.println("test 6");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, "tileBarrier0");
-        //ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier.RenderTileEntityBarrier());
         barrierBlock0 = new com.tobikcze.azd_mod.blocks.Barrier.BarrierBlock().setBlockName("BarrierBlock0");
         GameRegistry.registerBlock(barrierBlock0, barrierBlock0.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(barrierBlock0), new GenericBlockItemRenderer(new RenderTileEntityBarrier(), new TileEntityBarrier()));
-
+        System.out.println("test 7");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, "tileBarrier1");
-        //ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier1.RenderTileEntityBarrier());
         barrierBlock1 = new com.tobikcze.azd_mod.blocks.Barrier1.BarrierBlock().setBlockName("BarrierBlock1");
         GameRegistry.registerBlock(barrierBlock1, barrierBlock1.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(barrierBlock1), new GenericBlockItemRenderer(new com.tobikcze.azd_mod.blocks.Barrier1.RenderTileEntityBarrier(), new com.tobikcze.azd_mod.blocks.Barrier1.TileEntityBarrier()));
-
+        System.out.println("test 8");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, "tileBarrier2");
-        //ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier2.RenderTileEntityBarrier());
         barrierBlock2 = new com.tobikcze.azd_mod.blocks.Barrier2.BarrierBlock().setBlockName("BarrierBlock2");
         GameRegistry.registerBlock(barrierBlock2, barrierBlock2.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(barrierBlock2), new GenericBlockItemRenderer(new com.tobikcze.azd_mod.blocks.Barrier2.RenderTileEntityBarrier(), new com.tobikcze.azd_mod.blocks.Barrier2.TileEntityBarrier()));
-
+        System.out.println("test 9");
         GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, "tileBarrier3");
-        //ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier.class, new com.tobikcze.azd_mod.blocks.Barrier3.RenderTileEntityBarrier());
         barrierBlock3 = new com.tobikcze.azd_mod.blocks.Barrier3.BarrierBlock().setBlockName("BarrierBlock3");
         GameRegistry.registerBlock(barrierBlock3, barrierBlock3.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(barrierBlock3), new GenericBlockItemRenderer(new com.tobikcze.azd_mod.blocks.Barrier3.RenderTileEntityBarrier(), new com.tobikcze.azd_mod.blocks.Barrier3.TileEntityBarrier()));
+        System.out.println("test 10");
 
-        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, "tileCross");
-        //ClientRegistry.bindTileEntitySpecialRenderer(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, new com.tobikcze.azd_mod.blocks.Cross.RenderTileEntityCross());
         crossBlock = new com.tobikcze.azd_mod.blocks.Cross.CrossBlock().setBlockName("CrossBlock");
+        GameRegistry.registerTileEntity(com.tobikcze.azd_mod.blocks.Cross.TileEntityCross.class, "tileCross");
         GameRegistry.registerBlock(crossBlock, crossBlock.getUnlocalizedName().substring(5));
-        //MinecraftForgeClient.registerItemRenderer(Item.getItemFromBlock(crossBlock), new GenericBlockItemRenderer(new RenderTileEntityCross(), new TileEntityCross()));
 
-
+        System.out.println("super luigi galaxyyy");
         proxy.preInit(event);
     }
 
     @EventHandler
     public void init(FMLInitializationEvent event) {
+        System.out.println("super weegie galaxyyy");
         proxy.init(event);
         // Proxy, TileEntity, entity, GUI and Packet registering
 
-        System.out.println("super weegie galaxyyy");
 
-        GameRegistry.addRecipe(new net.minecraft.item.ItemStack(azdBlock, 1), new Object[]{"GLG", "NIN", "SRS", 'G', Blocks.glass_pane, 'L', Blocks.redstone_lamp, 'N', Blocks.noteblock, 'I', Items.iron_ingot, 'S', Blocks.stone, 'R', Items.redstone});
+        GameRegistry.addRecipe(new net.minecraft.item.ItemStack(itemAzdBlock, 1), new Object[]{"GLG", "NIN", "SRS", 'G', Blocks.glass_pane, 'L', Blocks.redstone_lamp, 'N', Blocks.noteblock, 'I', Items.iron_ingot, 'S', Blocks.stone, 'R', Items.redstone});
 
         GameRegistry.addRecipe(new net.minecraft.item.ItemStack(itemAzdBarrier, 1), new Object[]{"WRI", "PPM", "WRI", 'W', new ItemStack(Items.dye, 1, 15), 'R', new ItemStack(Items.dye, 1, 1), 'I', Items.iron_ingot, 'P', Blocks.planks, 'M', Blocks.piston});
 

@@ -1,10 +1,9 @@
-package com.tobikcze.azd_mod.blocks.Barrier1;
+package com.tobikcze.azd_mod.blocks.AZDBlock3;
 
 import com.tobikcze.azd_mod.azd_mod;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
 import net.minecraft.block.material.Material;
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.ItemStack;
@@ -12,9 +11,9 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.MathHelper;
 import net.minecraft.world.World;
 
-public class BarrierBlock extends BlockContainer {
+public class AZDBlock extends BlockContainer {
 
-    public BarrierBlock() {
+    public AZDBlock() {
         super(Material.iron);
     }
 
@@ -35,10 +34,15 @@ public class BarrierBlock extends BlockContainer {
 
     @Override
     public TileEntity createNewTileEntity(World world, int par2) {
-        return new TileEntityBarrier();
+        try{
+            TileEntityAZD tileEntityAZD = new TileEntityAZD();
+            return tileEntityAZD;
+        }
+        catch(Exception e){
+            System.out.println("Error creating TileEntityAZD: " + e.getMessage());
+            return null;
+        }
     }
-
-    //on block break, drop the azd_mod.itemAzdBarrier item
     public void breakBlock(World world, int x, int y, int z, Block block, int metadata) {
         dropCustomItem(world, x, y, z); // Custom method to drop the custom item
         super.breakBlock(world, x, y, z, block, metadata);
@@ -47,7 +51,7 @@ public class BarrierBlock extends BlockContainer {
     private void dropCustomItem(World world, int x, int y, int z) {
         // Spawn your custom item as an EntityItem at the block's position
         if (!world.isRemote) {
-            ItemStack itemStack = new ItemStack(azd_mod.itemAzdBarrier); // Replace with your custom item
+            ItemStack itemStack = new ItemStack(azd_mod.itemAzdBlock); // Replace with your custom item
             float xOffset = 0.7F;
             float yOffset = 0.7F;
             float zOffset = 0.7F;

@@ -12,8 +12,7 @@ import net.minecraft.world.World;
 public class CrossBlock extends BlockContainer {
 
     public CrossBlock() {
-        super(Material.cloth);
-        this.setBlockName("AzdCrossBlock");
+        super(Material.iron);
     }
 
     @Override

@@ -46,7 +46,6 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 }
-
 processResources {
     // This will ensure that this task is redone when the versions change.
     inputs.property "version", project.version
