@@ -59,7 +59,7 @@ public class azd_mod {
     public void preInit(FMLPreInitializationEvent event) {
         // Item/Block init and registering
 
-        itemAzdBlock = new ItemAzdBlock().setUnlocalizedName("itemAzdBlock");
+        itemAzdBlock = new ItemAzdBlock().setUnlocalizedName("itemAzdBlock").setTextureName("azd:itemAzd");
         GameRegistry.registerItem(itemAzdBlock, itemAzdBlock.getUnlocalizedName().substring(5));
         azdBlock = new com.tobikcze.azd_mod.blocks.AZDBlock.AZDBlock().setBlockName("AzdBlock");
         GameRegistry.registerBlock(azdBlock, azdBlock.getUnlocalizedName().substring(5));
@@ -71,7 +71,7 @@ public class azd_mod {
         GameRegistry.registerBlock(azdBlock3, azdBlock3.getUnlocalizedName().substring(5));
 
 
-        itemAzdBarrier = new ItemAzdBarrier().setUnlocalizedName("itemAzdBarrier");;
+        itemAzdBarrier = new ItemAzdBarrier().setUnlocalizedName("itemAzdBarrier").setTextureName("azd:itemAzdBarrier");
         GameRegistry.registerItem(itemAzdBarrier, itemAzdBarrier.getUnlocalizedName().substring(5));
         barrierBlock0 = new com.tobikcze.azd_mod.blocks.Barrier.BarrierBlock().setBlockName("BarrierBlock0");
         GameRegistry.registerBlock(barrierBlock0, barrierBlock0.getUnlocalizedName().substring(5));
@@ -83,7 +83,7 @@ public class azd_mod {
         GameRegistry.registerBlock(barrierBlock3, barrierBlock3.getUnlocalizedName().substring(5));
 
 
-        itemCrossBlock = new ItemCrossBlock().setUnlocalizedName("itemCrossBlock");
+        itemCrossBlock = new ItemCrossBlock().setUnlocalizedName("itemCrossBlock").setTextureName("azd:itemAzdCrossSingle");
         GameRegistry.registerItem(itemCrossBlock, itemCrossBlock.getUnlocalizedName().substring(5));
 
         crossBlock = new com.tobikcze.azd_mod.blocks.Cross.CrossBlock().setBlockName("CrossBlock");
